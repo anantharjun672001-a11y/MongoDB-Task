@@ -1,0 +1,90 @@
+Question 1:Find all the topics and tasks which are thought in the month of October
+
+
+Anwser:
+
+db.topics.aggregate([
+  {
+    $match: {
+      date: {
+        $gte: ISODate("2020-10-01"),
+        $lte: ISODate("2020-10-31")
+      }
+    }
+  },
+  {
+    $lookup: {
+      from: "task",
+      localField: "_id",
+      foreignField: "topic_id",
+      as: "tasks"
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      title: 1,
+      date: 1,
+      tasks: { task: 1, due_date: 1 }
+    }
+  }
+])
+
+
+Ouput:
+
+{
+  title: 'HTML',
+  date: 2020-10-15T00:00:00.000Z,
+  tasks: [
+    {},
+    {
+      task: 'Html Page',
+      due_date: 2020-10-18T00:00:00.000Z
+    }
+  ]
+}
+
+{
+  title: 'Css',
+  date: 2020-10-19T00:00:00.000Z,
+  tasks: [
+    {
+      task: 'Css Page',
+      due_date: 2020-10-22T00:00:00.000Z
+    }
+  ]
+}
+
+{
+  title: 'Tailwind',
+  date: 2020-10-23T00:00:00.000Z,
+  tasks: [
+    {
+      task: 'Tailwind Page',
+      due_date: 2020-10-24T00:00:00.000Z
+    }
+  ]
+}
+
+{
+  title: 'Javascript',
+  date: 2020-10-25T00:00:00.000Z,
+  tasks: [
+    {
+      task: 'TODO app',
+      due_date: 2020-10-27T00:00:00.000Z
+    }
+  ]
+}
+
+{
+  title: 'React',
+  date: 2020-10-28T00:00:00.000Z,
+  tasks: [
+    {
+      task: 'E-commerce',
+      due_date: 2020-10-31T00:00:00.000Z
+    }
+  ]
+}
