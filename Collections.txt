@@ -296,3 +296,96 @@ Ouput:
     '4': ObjectId('695140971c2dfa49d841f083')
   }
 }
+
+
+Task:
+
+db.task.insertMany(
+  [
+    {
+      topic_id:ObjectId('695140971c2dfa49d841f07f'),
+      task:"Html Page",
+      due_date:ISODate("2020-10-18"),
+      submitted:[ObjectId('69513b9e1c2dfa49d841f064'),ObjectId('69513b9e1c2dfa49d841f065'), ObjectId('69513b9e1c2dfa49d841f066'),ObjectId('69513b9e1c2dfa49d841f075')]
+    },
+    {
+      topic_id:ObjectId('695140971c2dfa49d841f080'),
+      task:"Css Page",
+      due_date:ISODate("2020-10-22"),
+      submitted:[ObjectId('69513b9e1c2dfa49d841f064'),ObjectId('69513b9e1c2dfa49d841f065'), ObjectId('69513b9e1c2dfa49d841f066'),ObjectId('69513b9e1c2dfa49d841f075')]
+    },
+    {
+      topic_id:ObjectId('695140971c2dfa49d841f081'),
+      task:"Tailwind Page",
+      due_date:ISODate("2020-10-24"),
+      submitted:[ObjectId('69513b9e1c2dfa49d841f064'),ObjectId('69513b9e1c2dfa49d841f065'), ObjectId('69513b9e1c2dfa49d841f066'),ObjectId('69513b9e1c2dfa49d841f074'),]
+    },
+    {
+      topic_id:ObjectId('695140971c2dfa49d841f082'),
+      task:"TODO app",
+      due_date:ISODate("2020-10-27"),
+      submitted:[ObjectId('69513b9e1c2dfa49d841f064'),ObjectId('69513b9e1c2dfa49d841f065'), ObjectId('69513b9e1c2dfa49d841f066'),ObjectId('69513b9e1c2dfa49d841f074'),]
+    },
+    {
+      topic_id:ObjectId('695140971c2dfa49d841f083'),
+      task:"E-commerce",
+      due_date:ISODate("2020-10-31"),
+      submitted:[ObjectId('69513b9e1c2dfa49d841f064'),ObjectId('69513b9e1c2dfa49d841f065'), ObjectId('69513b9e1c2dfa49d841f066'),ObjectId('69513b9e1c2dfa49d841f075')]
+      
+    }
+  ]
+)
+
+
+Output:
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('695143341c2dfa49d841f086'),
+    '1': ObjectId('695143341c2dfa49d841f087'),
+    '2': ObjectId('695143341c2dfa49d841f088'),
+    '3': ObjectId('695143341c2dfa49d841f089'),
+    '4': ObjectId('695143341c2dfa49d841f08a')
+  }
+}
+
+
+Company Drive:
+
+
+db.company_drive.insertMany(
+  [
+    {
+      company_name:"HCL",
+      date:ISODate("2020-10-18"),
+      attended_persons:[ObjectId('69513b9e1c2dfa49d841f064'),ObjectId('69513b9e1c2dfa49d841f065'), ObjectId('69513b9e1c2dfa49d841f066'),ObjectId('69513b9e1c2dfa49d841f075')]
+    },
+    {
+      company_name:"TCS",
+      date:ISODate("2020-10-22"),
+      attended_persons:[ObjectId('69513b9e1c2dfa49d841f064'),ObjectId('69513b9e1c2dfa49d841f065'), ObjectId('69513b9e1c2dfa49d841f066'),ObjectId('69513b9e1c2dfa49d841f074')]
+    },
+    {
+      company_name:"Infosys",
+      date:ISODate("2020-10-28"),
+      attended_persons:[ObjectId('69513b9e1c2dfa49d841f064'),ObjectId('69513b9e1c2dfa49d841f065'), ObjectId('69513b9e1c2dfa49d841f066'),ObjectId('69513b9e1c2dfa49d841f075')]
+    }
+  ]
+
+
+  Output:
+
+  {
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('695144961c2dfa49d841f08b'),
+    '1': ObjectId('695144961c2dfa49d841f08c'),
+    '2': ObjectId('695144961c2dfa49d841f08d')
+  }
+}
+
+
+Codekata:
+
+
