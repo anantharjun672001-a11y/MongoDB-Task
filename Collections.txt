@@ -39,3 +39,73 @@ Output:
     '4': ObjectId('69512edd1c2dfa49d841f048')
   }
 }
+
+Users:
+
+db.users.insertMany(
+  [
+    {
+      uname:"Arjun",
+      email:"arjun@gmail.com",
+      codekata_score:160
+    },
+    {
+      uname:"Abinaya",
+      email:"abinaya45@gmail.com",
+      codekata_score:132
+    },
+    {
+      uname:"Beaula",
+      email:"beaula@gmail.com",
+      codekata_score:149
+    },
+    {
+      uname:"Boobalan",
+      email:"boobalan@gmail.com",
+      codekata_score:164
+    },
+    {
+      uname:"Chandru",
+      email:"chandru@gmail.com",
+      codekata_score:162
+    },
+    {
+      uname:"Divya",
+      email:"divya@gmail.com",
+      codekata_score:151
+    },
+    {
+      uname:"Elango",
+      email:"elango@gmail.com",
+      codekata_score:156
+    },
+    {
+      uname:"Fathima",
+      email:"fathima@gmail.com",
+      codekata_score:169
+    },
+    {
+      uname:"Ganesh",
+      email:"ganesh@gmail.com",
+      codekata_score:132
+    }
+  ]
+)
+
+
+Output:
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('695131dd1c2dfa49d841f049'),
+    '1': ObjectId('695131dd1c2dfa49d841f04a'),
+    '2': ObjectId('695131dd1c2dfa49d841f04b'),
+    '3': ObjectId('695131dd1c2dfa49d841f04c'),
+    '4': ObjectId('695131dd1c2dfa49d841f04d'),
+    '5': ObjectId('695131dd1c2dfa49d841f04e'),
+    '6': ObjectId('695131dd1c2dfa49d841f04f'),
+    '7': ObjectId('695131dd1c2dfa49d841f050'),
+    '8': ObjectId('695131dd1c2dfa49d841f051')
+  }
+}
