@@ -47,65 +47,140 @@ db.users.insertMany(
     {
       uname:"Arjun",
       email:"arjun@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
       codekata_score:160
     },
     {
       uname:"Abinaya",
       email:"abinaya45@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
       codekata_score:132
     },
     {
       uname:"Beaula",
       email:"beaula@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
       codekata_score:149
     },
     {
       uname:"Boobalan",
       email:"boobalan@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
       codekata_score:164
     },
     {
       uname:"Chandru",
       email:"chandru@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
       codekata_score:162
     },
     {
       uname:"Divya",
       email:"divya@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
       codekata_score:151
     },
     {
       uname:"Elango",
       email:"elango@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
       codekata_score:156
     },
     {
       uname:"Fathima",
       email:"fathima@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
       codekata_score:169
     },
     {
       uname:"Ganesh",
       email:"ganesh@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
       codekata_score:132
+    },
+    {
+      uname:"Harini",
+      email:"harini34@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
+      codekata_score:145
+    },
+    {
+      uname:"Ishwarya",
+      email:"ishwarya@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
+      codekata_score:143
+    },
+    {
+      uname:"Janani",
+      email:"janani@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
+      codekata_score:151
+    },
+    {
+      uname:"Kamali",
+      email:"kamali@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
+      codekata_score:162
+    },
+    {
+      uname:"Karthika",
+      email:"karthika@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
+      codekata_score:166
+    },
+    {
+      uname:"Lavanya",
+      email:"lavanya@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f044'),
+      codekata_score:144
+    },
+    {
+     	uname:"Lokesh",
+      email:"lokesh@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f048'),
+      codekata_score:134
+    },
+    {
+      uname:"Laya",
+      email:"laya@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f048'),
+      codekata_score:132
+    },
+    {
+      uname:"Latha",
+      email:"latha@gmail.com",
+      mentor:ObjectId('69512edd1c2dfa49d841f048'),
+      codekata_score:141
     }
+     
   ]
 )
-
 
 Output:
 
 {
   acknowledged: true,
   insertedIds: {
-    '0': ObjectId('695131dd1c2dfa49d841f049'),
-    '1': ObjectId('695131dd1c2dfa49d841f04a'),
-    '2': ObjectId('695131dd1c2dfa49d841f04b'),
-    '3': ObjectId('695131dd1c2dfa49d841f04c'),
-    '4': ObjectId('695131dd1c2dfa49d841f04d'),
-    '5': ObjectId('695131dd1c2dfa49d841f04e'),
-    '6': ObjectId('695131dd1c2dfa49d841f04f'),
-    '7': ObjectId('695131dd1c2dfa49d841f050'),
-    '8': ObjectId('695131dd1c2dfa49d841f051')
+    '0': ObjectId('69513b9e1c2dfa49d841f064'),
+    '1': ObjectId('69513b9e1c2dfa49d841f065'),
+    '2': ObjectId('69513b9e1c2dfa49d841f066'),
+    '3': ObjectId('69513b9e1c2dfa49d841f067'),
+    '4': ObjectId('69513b9e1c2dfa49d841f068'),
+    '5': ObjectId('69513b9e1c2dfa49d841f069'),
+    '6': ObjectId('69513b9e1c2dfa49d841f06a'),
+    '7': ObjectId('69513b9e1c2dfa49d841f06b'),
+    '8': ObjectId('69513b9e1c2dfa49d841f06c'),
+    '9': ObjectId('69513b9e1c2dfa49d841f06d'),
+    '10': ObjectId('69513b9e1c2dfa49d841f06e'),
+    '11': ObjectId('69513b9e1c2dfa49d841f06f'),
+    '12': ObjectId('69513b9e1c2dfa49d841f070'),
+    '13': ObjectId('69513b9e1c2dfa49d841f071'),
+    '14': ObjectId('69513b9e1c2dfa49d841f072'),
+    '15': ObjectId('69513b9e1c2dfa49d841f073'),
+    '16': ObjectId('69513b9e1c2dfa49d841f074'),
+    '17': ObjectId('69513b9e1c2dfa49d841f075')
   }
 }
+
+
+
