@@ -182,5 +182,72 @@ Output:
   }
 }
 
+Attendance:
 
+db.attendance.insertMany(
+  [
+    {
+      user_id:ObjectId('69513b9e1c2dfa49d841f065'),
+      date:ISODate("2020-10-15"),
+      status:"absent"
+    },
+    {
+      user_id:ObjectId('69513b9e1c2dfa49d841f06d'),
+      date:ISODate("2020-10-16"),
+      status:"absent"
+    },
+    {
+      user_id:ObjectId('69513b9e1c2dfa49d841f075'),
+      date:ISODate("2020-10-17"),
+  		status:"absent"
+    },
+    {
+      user_id:ObjectId('69513b9e1c2dfa49d841f074'),
+      date:ISODate("2020-10-18"),
+      status:"absent"
+    },
+    {
+      user_id:ObjectId('69513b9e1c2dfa49d841f072'),
+      date:ISODate("2020-10-19"),
+      status:"absent"
+    },
+    {
+      user_id:ObjectId('69513b9e1c2dfa49d841f06d'),
+      date:ISODate("2020-10-20"),
+      status:"absent"
+    },
+    {
+      user_id:ObjectId('69513b9e1c2dfa49d841f06f'),
+      date:ISODate("2020-10-21"),
+      status:"absent"
+    },
+    {
+      user_id:ObjectId('69513b9e1c2dfa49d841f06f'),
+      date:ISODate("2020-10-22"),
+      status:"absent"
+    },
+    {
+      user_id:ObjectId('69513b9e1c2dfa49d841f066'),
+      date:ISODate("2020-10-29"),
+      status:"absent"
+    }
+  ]
+)
+
+Ouput:
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69513ef71c2dfa49d841f076'),
+    '1': ObjectId('69513ef71c2dfa49d841f077'),
+    '2': ObjectId('69513ef71c2dfa49d841f078'),
+    '3': ObjectId('69513ef71c2dfa49d841f079'),
+    '4': ObjectId('69513ef71c2dfa49d841f07a'),
+    '5': ObjectId('69513ef71c2dfa49d841f07b'),
+    '6': ObjectId('69513ef71c2dfa49d841f07c'),
+    '7': ObjectId('69513ef71c2dfa49d841f07d'),
+    '8': ObjectId('69513ef71c2dfa49d841f07e')
+  }
+}
 
