@@ -388,4 +388,67 @@ db.company_drive.insertMany(
 
 Codekata:
 
+db.codekata.insertMany([
+  {
+    user_id:ObjectId('69513b9e1c2dfa49d841f064'),
+    date:ISODate("2020-10-18"),
+    solved:10
+  },
+  {
+    user_id:ObjectId('69513b9e1c2dfa49d841f066'),
+    date:ISODate("2020-10-19"),
+    solved:6
+  },
+  {
+    user_id:ObjectId('69513b9e1c2dfa49d841f068'),
+    date:ISODate("2020-10-20"),
+    solved:7
+  },
+  {
+    user_id: ObjectId('69513b9e1c2dfa49d841f06a'),
+    date:ISODate("2020-10-21"),
+    solved:11
+  },
+  {
+    user_id:ObjectId('69513b9e1c2dfa49d841f06c'),
+    date:ISODate("2020-10-22"),
+    solved:10
+  },
+  {
+    user_id:ObjectId('69513b9e1c2dfa49d841f06e'),
+    date:ISODate("2020-10-23"),
+    solved:9
+  },
+  {
+    user_id:ObjectId('69513b9e1c2dfa49d841f070'),
+    date:ISODate("2020-10-25"),
+    solved:8
+  },
+  {
+    user_Id:ObjectId('69513b9e1c2dfa49d841f072'),
+    date:ISODate("2020-10-26"),
+    solved:9
+  },
+  {
+    user_id:ObjectId('69513b9e1c2dfa49d841f074'),
+    date:ISODate("2020-10-29"),
+    solved:8
+  }
+])
 
+Output:
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('695146ee1c2dfa49d841f08e'),
+    '1': ObjectId('695146ee1c2dfa49d841f08f'),
+    '2': ObjectId('695146ee1c2dfa49d841f090'),
+    '3': ObjectId('695146ee1c2dfa49d841f091'),
+    '4': ObjectId('695146ee1c2dfa49d841f092'),
+    '5': ObjectId('695146ee1c2dfa49d841f093'),
+    '6': ObjectId('695146ee1c2dfa49d841f094'),
+    '7': ObjectId('695146ee1c2dfa49d841f095'),
+    '8': ObjectId('695146ee1c2dfa49d841f096')
+  }
+}
