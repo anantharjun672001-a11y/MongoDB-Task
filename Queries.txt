@@ -142,3 +142,310 @@ Ouput:
 }
 
 
+Question 3:Find all the company drives and students who are appeared for the placement.
+
+
+Anwser:
+
+db.company_drive.aggregate([
+  {
+    $lookup: {
+      from: "users",
+      localField: "attended_persons",
+      foreignField: "_id",
+      as: "students"
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      company_name: 1,
+      date: 1,
+      "students.uname": 1,
+      "students.email": 1
+    }
+  }
+])
+
+Ouput:
+
+{
+  company_name: 'HCL',
+  date: 2020-10-18T00:00:00.000Z,
+  students: [
+    {
+      uname: 'Beaula',
+      email: 'beaula@gmail.com'
+    },
+    {
+      uname: 'Abinaya',
+      email: 'abinaya45@gmail.com'
+    },
+    {
+      uname: 'Latha',
+      email: 'latha@gmail.com'
+    },
+    {
+      uname: 'Arjun',
+      email: 'arjun@gmail.com'
+    }
+  ]
+}
+
+
+{
+  company_name: 'TCS',
+  date: 2020-10-22T00:00:00.000Z,
+  students: [
+    {
+      uname: 'Laya',
+      email: 'laya@gmail.com'
+    },
+    {
+      uname: 'Abinaya',
+      email: 'abinaya45@gmail.com'
+    },
+    {
+      uname: 'Beaula',
+      email: 'beaula@gmail.com'
+    },
+    {
+      uname: 'Arjun',
+      email: 'arjun@gmail.com'
+    }
+  ]
+}
+
+{
+  company_name: 'Infosys',
+  date: 2020-10-28T00:00:00.000Z,
+  students: [
+    {
+      uname: 'Latha',
+      email: 'latha@gmail.com'
+    },
+    {
+      uname: 'Arjun',
+      email: 'arjun@gmail.com'
+    },
+    {
+      uname: 'Beaula',
+      email: 'beaula@gmail.com'
+    },
+    {
+      uname: 'Abinaya',
+      email: 'abinaya45@gmail.com'
+    }
+  ]
+}
+
+Question 4:Find the number of problems solved by the user in codekata
+
+
+Anwser:
+
+db.codekata.aggregate([
+  {
+    $group: {
+      _id: "$user_id",
+      total_solved: { $sum: "$solved" }
+    }
+  },
+  {
+    $lookup: {
+      from: "users",
+      localField: "_id",
+      foreignField: "_id",
+      as: "user"
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      "user.uname": 1,
+      total_solved: 1
+    }
+  }
+])
+
+
+Ouput:
+
+{
+  total_solved: 9,
+  user: []
+}
+{
+  total_solved: 11,
+  user: [
+    {
+      uname: 'Elango'
+    }
+  ]
+}
+{
+  total_solved: 7,
+  user: [
+    {
+      uname: 'Chandru'
+    }
+  ]
+}
+{
+  total_solved: 10,
+  user: [
+    {
+      uname: 'Arjun'
+    }
+  ]
+}
+{
+  total_solved: 6,
+  user: [
+    {
+      uname: 'Beaula'
+    }
+  ]
+}
+{
+  total_solved: 10,
+  user: [
+    {
+      uname: 'Ganesh'
+    }
+  ]
+}
+{
+  total_solved: 9,
+  user: [
+    {
+      uname: 'Ishwarya'
+    }
+  ]
+}
+{
+  total_solved: 8,
+  user: [
+    {
+      uname: 'Kamali'
+    }
+  ]
+}
+{
+  total_solved: 8,
+  user: [
+    {
+      uname: 'Laya'
+    }
+  ]
+}
+
+Question 5:Find all the mentors with who has the mentee's count more than 15
+
+Anwser:
+
+db.users.aggregate([
+  {
+    $group: {
+      _id: "$mentor",
+      mentee_count: { $sum: 1 }
+    }
+  },
+  {
+    $match: {
+      mentee_count: { $gt: 15 }
+    }
+  }
+])
+
+
+Ouput:
+
+{
+  _id: null,
+  mentee_count: 31
+}
+{
+  _id: ObjectId('69512edd1c2dfa49d841f044'),
+  mentee_count: 16
+}
+
+
+Question 6:Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+
+
+Anwser:
+
+db.attendance.find({
+  status: "absent",
+  date: {
+    $gte: ISODate("2020-10-15"),
+    $lte: ISODate("2020-10-31")
+  }
+})
+
+
+Ouput:
+
+{
+  _id: ObjectId('69513ef71c2dfa49d841f076'),
+  user_id: ObjectId('69513b9e1c2dfa49d841f065'),
+  date: 2020-10-15T00:00:00.000Z,
+  status: 'absent'
+}
+{
+  _id: ObjectId('69513ef71c2dfa49d841f077'),
+  user_id: ObjectId('69513b9e1c2dfa49d841f06d'),
+  date: 2020-10-16T00:00:00.000Z,
+  status: 'absent'
+}
+{
+  _id: ObjectId('69513ef71c2dfa49d841f078'),
+  user_id: ObjectId('69513b9e1c2dfa49d841f075'),
+  date: 2020-10-17T00:00:00.000Z,
+  status: 'absent'
+}
+{
+  _id: ObjectId('69513ef71c2dfa49d841f079'),
+  user_id: ObjectId('69513b9e1c2dfa49d841f074'),
+  date: 2020-10-18T00:00:00.000Z,
+  status: 'absent'
+}
+{
+  _id: ObjectId('69513ef71c2dfa49d841f07a'),
+  user_id: ObjectId('69513b9e1c2dfa49d841f072'),
+  date: 2020-10-19T00:00:00.000Z,
+  status: 'absent'
+}
+{
+  _id: ObjectId('69513ef71c2dfa49d841f07b'),
+  user_id: ObjectId('69513b9e1c2dfa49d841f06d'),
+  date: 2020-10-20T00:00:00.000Z,
+  status: 'absent'
+}
+{
+  _id: ObjectId('69513ef71c2dfa49d841f07c'),
+  user_id: ObjectId('69513b9e1c2dfa49d841f06f'),
+  date: 2020-10-21T00:00:00.000Z,
+  status: 'absent'
+}
+{
+  _id: ObjectId('69513ef71c2dfa49d841f07d'),
+  user_id: ObjectId('69513b9e1c2dfa49d841f06f'),
+  date: 2020-10-22T00:00:00.000Z,
+  status: 'absent'
+}
+{
+  _id: ObjectId('69513ef71c2dfa49d841f07d'),
+  user_id: ObjectId('69513b9e1c2dfa49d841f06f'),
+  date: 2020-10-22T00:00:00.000Z,
+  status: 'absent'
+}
+{
+  _id: ObjectId('69513ef71c2dfa49d841f07e'),
+  user_id: ObjectId('69513b9e1c2dfa49d841f066'),
+  date: 2020-10-29T00:00:00.000Z,
+  status: 'absent'
+}
+
+
