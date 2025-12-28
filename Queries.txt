@@ -88,3 +88,57 @@ Ouput:
     }
   ]
 }
+
+
+Question 2:Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+
+
+Anwser:
+
+db.company_drive.find({
+  date: {
+    $gte: ISODate("2020-10-15"),
+    $lte: ISODate("2020-10-31")
+  }
+})
+
+
+Ouput:
+
+
+{
+  _id: ObjectId('695144961c2dfa49d841f08b'),
+  company_name: 'HCL',
+  date: 2020-10-18T00:00:00.000Z,
+  attended_persons: [
+    ObjectId('69513b9e1c2dfa49d841f064'),
+    ObjectId('69513b9e1c2dfa49d841f065'),
+    ObjectId('69513b9e1c2dfa49d841f066'),
+    ObjectId('69513b9e1c2dfa49d841f075')
+  ]
+}
+{
+  _id: ObjectId('695144961c2dfa49d841f08c'),
+  company_name: 'TCS',
+  date: 2020-10-22T00:00:00.000Z,
+  attended_persons: [
+    ObjectId('69513b9e1c2dfa49d841f064'),
+    ObjectId('69513b9e1c2dfa49d841f065'),
+    ObjectId('69513b9e1c2dfa49d841f066'),
+    ObjectId('69513b9e1c2dfa49d841f074')
+  ]
+}
+
+{
+  _id: ObjectId('695144961c2dfa49d841f08d'),
+  company_name: 'Infosys',
+  date: 2020-10-28T00:00:00.000Z,
+  attended_persons: [
+    ObjectId('69513b9e1c2dfa49d841f064'),
+    ObjectId('69513b9e1c2dfa49d841f065'),
+    ObjectId('69513b9e1c2dfa49d841f066'),
+    ObjectId('69513b9e1c2dfa49d841f075')
+  ]
+}
+
+
