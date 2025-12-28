@@ -251,3 +251,48 @@ Ouput:
   }
 }
 
+Topics:
+
+db.topics.insertMany(
+  [
+    {
+      title:"HTML",
+      date:ISODate("2020-10-15"),
+      mentor:ObjectId('69512edd1c2dfa49d841f044')
+    },
+    {
+      title:"Css",
+      date:ISODate("2020-10-19"),
+      mentor:ObjectId('69512edd1c2dfa49d841f044')
+    },
+    {
+      title:"Tailwind",
+      date:ISODate("2020-10-23"),
+      mentor:ObjectId('69512edd1c2dfa49d841f044')
+    },
+    {
+      title:"Javascript",
+      date:ISODate("2020-10-25"),
+      mentor: ObjectId('69512edd1c2dfa49d841f045')
+    },
+    {
+      title:"React",
+      date:ISODate("2020-10-28"),
+      mentor:ObjectId('69512edd1c2dfa49d841f046')
+    }
+    
+  ]
+)
+
+Ouput:
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('695140971c2dfa49d841f07f'),
+    '1': ObjectId('695140971c2dfa49d841f080'),
+    '2': ObjectId('695140971c2dfa49d841f081'),
+    '3': ObjectId('695140971c2dfa49d841f082'),
+    '4': ObjectId('695140971c2dfa49d841f083')
+  }
+}
